@@ -20,7 +20,7 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav>
+		<nav className="navbar">
 			<ul>
 				{menu.map((current) => (
 					<li key={current.id}>
