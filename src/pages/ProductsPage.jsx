@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Card from "../components/Card";
 
 export default function ProductsPage() {
 	const productsEndpoint = "https://fakestoreapi.com/products";
@@ -21,12 +22,22 @@ export default function ProductsPage() {
 	const fetchProducts = () => {
 		fetch(productsEndpoint)
 			.then((response) => response.json())
-			.then(console.log)
 			.then(setProducts)
+			.then(console.log)
 			.catch((error) => console.error(error));
 	};
 
 	useEffect(fetchProducts, []);
 
-	return <div className="container"></div>;
+	return (
+		<div className="container">
+			<div className="row">
+				{products.map((item) => (
+					<div key={item.id} className="col">
+						<Card product={item} />
+					</div>
+				))}
+			</div>
+		</div>
+	);
 }
