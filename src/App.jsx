@@ -1,4 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AboutPage from "./pages/AboutPage";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 
 function App() {
@@ -6,9 +9,9 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route element={<DefaultLayout />}>
-					<Route path="/" element={<h1>HomePage</h1>} />
-					<Route path="/about" element={<h1>AboutPage</h1>} />
-					<Route path="/products" element={<h1>Products</h1>} />
+					<Route path="/" element={<HomePage />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/products" element={<ProductsPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
