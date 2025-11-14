@@ -24,9 +24,14 @@ body {
 	a {
 		color: black;
 		text-decoration: none;
+
 		&:hover {
 			cursor: pointer;
 			text-decoration: underline;
 		}
 	}
+}
+
+.navbar a.active {
+	color: rgb(114, 114, 216);
 }
