@@ -35,3 +35,18 @@ body {
 .navbar a.active {
 	color: rgb(114, 114, 216);
 }
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: space-between;
+}
+
+.card {
+	width: 230px;
+
+	img {
+		width: 230px;
+	}
+}
