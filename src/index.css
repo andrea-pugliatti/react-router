@@ -32,6 +32,16 @@ body {
 	}
 }
 
+.jumbotron {
+	text-align: center;
+	background-color: aquamarine;
+	padding: 2rem;
+
+	& > * + * {
+		margin: 1rem;
+	}
+}
+
 .navbar a.active {
 	color: rgb(114, 114, 216);
 }

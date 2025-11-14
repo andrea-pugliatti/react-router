@@ -23,7 +23,6 @@ export default function ProductsPage() {
 		fetch(productsEndpoint)
 			.then((response) => response.json())
 			.then(setProducts)
-			.then(console.log)
 			.catch((error) => console.error(error));
 	};
 
