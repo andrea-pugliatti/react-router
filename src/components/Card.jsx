@@ -4,9 +4,14 @@ export default function Card({ product }) {
 			<img src={product.image} alt={product.title} />
 			<div className="card-body">
 				<h3>{product.title}</h3>
-				<span>{product.rating.rate}/5 </span>
-				<span>Price: {product.price}€</span>
-				<div>{product.description}</div>
+				<div className="d-flex space-between">
+					<div className="product-rating">{product.rating.rate}/5 </div>
+					<div>
+						<span>PRICE: </span>
+						<span className="product-price">{product.price}€</span>
+					</div>
+				</div>
+				<div className="product-description">{product.description}</div>
 			</div>
 		</div>
 	);

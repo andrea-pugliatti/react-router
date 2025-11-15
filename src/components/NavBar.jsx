@@ -21,13 +21,18 @@ export default function NavBar() {
 
 	return (
 		<nav className="navbar">
-			<ul>
-				{menu.map((current) => (
-					<li key={current.id}>
-						<NavLink to={current.link}>{current.title}</NavLink>
+			<div className="container">
+				<ul className="menu">
+					<li>
+						<h1>NEGOZIO</h1>
 					</li>
-				))}
-			</ul>
+					{menu.map((current) => (
+						<li key={current.id}>
+							<NavLink to={current.link}>{current.title}</NavLink>
+						</li>
+					))}
+				</ul>
+			</div>
 		</nav>
 	);
 }

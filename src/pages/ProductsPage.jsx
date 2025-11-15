@@ -29,14 +29,16 @@ export default function ProductsPage() {
 	useEffect(fetchProducts, []);
 
 	return (
-		<div className="container">
-			<div className="row">
-				{products.map((item) => (
-					<div key={item.id} className="col">
-						<Card product={item} />
-					</div>
-				))}
+		<main>
+			<div className="container">
+				<div className="row">
+					{products.map((item) => (
+						<div key={item.id} className="col">
+							<Card product={item} />
+						</div>
+					))}
+				</div>
 			</div>
-		</div>
+		</main>
 	);
 }

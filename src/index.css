@@ -8,15 +8,33 @@ body {
 	font-family: system-ui, Helvetica, Arial, sans-serif;
 }
 
+main {
+	background-color: rgb(208, 208, 208);
+}
+
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.space-between {
+	justify-content: space-between;
 }
 
 .navbar ul {
 	list-style: none;
 	display: flex;
 	padding: 1rem;
+	align-items: center;
+
 	li {
 		margin-inline-end: 1rem;
 	}
@@ -36,8 +54,7 @@ body {
 	text-align: center;
 	background-color: aquamarine;
 	padding: 2rem;
-
-	& > * + * {
+	& div > * + * {
 		margin: 1rem;
 	}
 }
@@ -51,12 +68,55 @@ body {
 	flex-wrap: wrap;
 	gap: 1rem;
 	justify-content: space-between;
+	padding: 2rem 0;
 }
 
 .card {
-	width: 230px;
+	width: 320px;
+	height: 600px;
+	padding: 1rem;
+	border: 5px dashed black;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
 
 	img {
-		width: 230px;
+		object-fit: contain;
+		width: 80%;
+		height: 200px;
+		align-self: center;
+	}
+	h3 {
+		font-size: 1.2rem;
+		padding: 1rem 0;
+		&:hover {
+			color: rgb(0, 145, 255);
+			cursor: pointer;
+		}
+	}
+	.product-rating {
+		align-self: flex-end;
+		font-size: 1.1rem;
+		&::before {
+			content: "★ ";
+		}
+	}
+	.product-price {
+		align-self: flex-end;
+		font-size: 1.4rem;
+		font-weight: 600;
+		&:hover {
+			color: rgb(0, 145, 255);
+			cursor: pointer;
+		}
+	}
+
+	.product-description {
+		margin: 1rem 0;
+		font-weight: 300;
+		font-size: 0.9rem;
+		line-height: 1.2rem;
+		max-height: 220px;
+		overflow-y: scroll;
 	}
 }
