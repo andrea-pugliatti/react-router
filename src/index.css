@@ -47,6 +47,17 @@ footer {
 	justify-content: space-between;
 }
 
+.not-found {
+	text-align: center;
+	padding: 2rem;
+	h2 {
+		margin-bottom: 1rem;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
 .navbar ul {
 	list-style: none;
 	display: flex;
@@ -75,10 +86,26 @@ footer {
 	& div > * + * {
 		margin: 1rem;
 	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.about-page {
+	text-align: center;
+	background-color: aqua;
+	padding: 2rem;
+	& div > * + * {
+		margin: 1rem;
+	}
+
+	.bold {
+		font-weight: 700;
+	}
 }
 
 .navbar a.active {
-	color: rgb(114, 114, 216);
+	font-weight: 600;
 }
 
 .row {
