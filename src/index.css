@@ -17,6 +17,19 @@ a {
 	color: black;
 }
 
+footer {
+	height: 100vh;
+	background: linear-gradient(rgb(208, 208, 208), rgb(0, 0, 0) 80%);
+	display: flex;
+
+	div {
+		display: block;
+		color: white;
+		align-self: flex-end;
+		padding: 1rem;
+	}
+}
+
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
