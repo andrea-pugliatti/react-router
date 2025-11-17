@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Quantum } from "ldrs/react";
+import "ldrs/react/Quantum.css";
 
 export default function ProductPage() {
 	const { id } = useParams();
@@ -27,7 +29,7 @@ export default function ProductPage() {
 	return (
 		<div className="container">
 			{isLoading ? (
-				"LOADING"
+				<Quantum size="150" speed="1.00" color="black" />
 			) : (
 				<div>
 					<img src={product.image} alt={product.title} />
