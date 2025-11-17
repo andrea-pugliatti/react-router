@@ -22,9 +22,13 @@ export default function ProductPage() {
 			.finally(() => setIsLoading(false));
 	};
 
+	// useEffect(() => {
+	// 	fetchProduct();
+	// }, []);
+
 	useEffect(() => {
 		fetchProduct();
-	}, []);
+	}, [id]);
 
 	return (
 		<div className="container">
@@ -33,6 +37,20 @@ export default function ProductPage() {
 			) : (
 				<div>
 					<img src={product.image} alt={product.title} />
+					<div>
+						<button
+							type="button"
+							onClick={() => navigate(`/products/${Number(id) - 1}`)}
+						>
+							{"<-"}
+						</button>
+						<button
+							type="button"
+							onClick={() => navigate(`/products/${Number(id) + 1}`)}
+						>
+							{"->"}
+						</button>
+					</div>
 					<div>{product.title}</div>
 					<div>{product.category}</div>
 					<div>{product.description}</div>
