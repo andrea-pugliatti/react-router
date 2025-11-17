@@ -83,7 +83,7 @@ a {
 	border: 5px dashed black;
 	display: flex;
 	flex-direction: column;
-
+	justify-content: space-between;
 	&:hover {
 		cursor: pointer;
 	}
@@ -151,30 +151,47 @@ a {
 			}
 		}
 	}
+
 	.product-title {
 		text-align: center;
 		font-size: 1.5rem;
 		font-weight: 600;
 		text-transform: uppercase;
 	}
+
 	.product-category {
 		background-color: white;
 		width: fit-content;
 		padding: 0.5rem 1rem;
+		margin: 1rem;
+		align-self: flex-end;
 		border-radius: 10px;
 		text-transform: uppercase;
 	}
 	.product-price {
 		font-size: 2rem;
-		align-self: flex-end;
+		margin: 1rem;
+		align-self: center;
 	}
+
 	.product-description {
 		background-color: white;
 		border-radius: 20px;
 		text-align: center;
 		align-self: center;
-		max-width: 600px;
+		max-width: 800px;
 		padding: 1rem;
-		margin: 2rem;
+		margin: 1rem;
+	}
+	.product-rating {
+		&::before {
+			content: "★ ";
+		}
+		font-size: 1.2rem;
+		margin: 0 auto;
+	}
+	.product-rating-count {
+	}
+	.product-rating-rate {
 	}
 }

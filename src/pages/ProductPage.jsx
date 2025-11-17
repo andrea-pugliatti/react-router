@@ -32,6 +32,7 @@ export default function ProductPage() {
 					<Loader />
 				) : (
 					<div className="product-detail">
+						<div className="product-category">{product.category}</div>
 						<img src={product.image} alt={product.title} />
 						<div className="product-buttons">
 							<button
@@ -77,11 +78,20 @@ export default function ProductPage() {
 							</button>
 						</div>
 						<div className="product-title">{product.title}</div>
-						<div className="product-category">{product.category}</div>
 						<div className="product-price">{product.price}€</div>
+						{product.rating ? (
+							<div className="product-rating">
+								<span className="product-rating-rate">
+									{product.rating.rate}/5
+								</span>{" "}
+								<span className="product-rating-count">
+									{product.rating.count} recensioni
+								</span>
+							</div>
+						) : (
+							""
+						)}
 						<div className="product-description">{product.description}</div>
-						{/* <div>{product.rating.count}</div>
-			    <div>{product.rating.rate}</div> */}
 					</div>
 				)}
 			</div>
