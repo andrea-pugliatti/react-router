@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../components/Card";
 
 export default function ProductsPage() {
@@ -34,7 +35,9 @@ export default function ProductsPage() {
 				<div className="row">
 					{products.map((item) => (
 						<div key={item.id} className="col">
-							<Card product={item} />
+							<Link to={`/products/${item.id}`}>
+								<Card product={item} />
+							</Link>
 						</div>
 					))}
 				</div>

@@ -12,6 +12,11 @@ main {
 	background-color: rgb(208, 208, 208);
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -80,6 +85,10 @@ main {
 	flex-direction: column;
 	flex-grow: 0;
 
+	&:hover {
+		cursor: pointer;
+	}
+
 	img {
 		object-fit: contain;
 		width: 80%;
@@ -89,10 +98,6 @@ main {
 	h3 {
 		font-size: 1.2rem;
 		padding: 1rem 0;
-		&:hover {
-			color: rgb(0, 145, 255);
-			cursor: pointer;
-		}
 	}
 	.product-rating {
 		align-self: flex-end;
@@ -105,10 +110,7 @@ main {
 		align-self: flex-end;
 		font-size: 1.4rem;
 		font-weight: 600;
-		&:hover {
-			color: rgb(0, 145, 255);
-			cursor: pointer;
-		}
+		color: rgb(0, 145, 255);
 	}
 
 	.product-description {
