@@ -11,7 +11,6 @@ export default function Card({ product }) {
 						<span className="product-price">{product.price}€</span>
 					</div>
 				</div>
-				<div className="product-description">{product.description}</div>
 			</div>
 		</div>
 	);

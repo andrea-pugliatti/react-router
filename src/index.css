@@ -72,18 +72,17 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	padding: 2rem 0;
 }
 
 .card {
 	width: 320px;
-	height: 600px;
+	height: 380px;
 	padding: 1rem;
 	border: 5px dashed black;
 	display: flex;
 	flex-direction: column;
-	flex-grow: 0;
 
 	&:hover {
 		cursor: pointer;
@@ -95,10 +94,12 @@ a {
 		height: 200px;
 		align-self: center;
 	}
+
 	h3 {
 		font-size: 1.2rem;
 		padding: 1rem 0;
 	}
+
 	.product-rating {
 		align-self: flex-end;
 		font-size: 1.1rem;
@@ -106,20 +107,12 @@ a {
 			content: "★ ";
 		}
 	}
+
 	.product-price {
 		align-self: flex-end;
 		font-size: 1.4rem;
 		font-weight: 600;
 		color: rgb(0, 145, 255);
-	}
-
-	.product-description {
-		margin: 1rem 0;
-		font-weight: 300;
-		font-size: 0.9rem;
-		line-height: 1.2rem;
-		max-height: 220px;
-		overflow-y: scroll;
 	}
 }
 
