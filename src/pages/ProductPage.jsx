@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, ScrollRestoration } from "react-router-dom";
 import Loader from "../components/Loader";
 
 export default function ProductPage() {
@@ -23,6 +23,8 @@ export default function ProductPage() {
 
 	useEffect(() => {
 		fetchProduct();
+		// Scroll to top when entering the product page
+		window.scrollTo(0, 0);
 	}, [id]);
 
 	return (
