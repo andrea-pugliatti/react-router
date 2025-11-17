@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function ProductPage() {
 	const { id } = useParams();
 	const [product, setProduct] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
 	const navigate = useNavigate();
 
 	const endpoint = `https://fakestoreapi.com/products/${id}`;
@@ -15,7 +16,8 @@ export default function ProductPage() {
 			.catch((error) => {
 				console.error(error);
 				navigate("/products");
-			});
+			})
+			.finally(() => setIsLoading(false));
 	};
 
 	useEffect(() => {
@@ -24,13 +26,19 @@ export default function ProductPage() {
 
 	return (
 		<div className="container">
-			<img src={product.image} alt={product.title} />
-			<div>{product.title}</div>
-			<div>{product.category}</div>
-			<div>{product.description}</div>
-			<div>{product.price}</div>
-			{/* <div>{product.rating.count}</div>
-			<div>{product.rating.rate}</div> */}
+			{isLoading ? (
+				"LOADING"
+			) : (
+				<div>
+					<img src={product.image} alt={product.title} />
+					<div>{product.title}</div>
+					<div>{product.category}</div>
+					<div>{product.description}</div>
+					<div>{product.price}</div>
+					{/* <div>{product.rating.count}</div>
+			    <div>{product.rating.rate}</div> */}
+				</div>
+			)}
 		</div>
 	);
 }
