@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProductPage() {
 	const { id } = useParams();
 	const [product, setProduct] = useState({});
+	const navigate = useNavigate();
 
 	const endpoint = `https://fakestoreapi.com/products/${id}`;
 
@@ -11,7 +12,10 @@ export default function ProductPage() {
 		fetch(endpoint)
 			.then((response) => response.json())
 			.then(setProduct)
-			.catch((error) => console.error(error));
+			.catch((error) => {
+				console.error(error);
+				navigate("/products");
+			});
 	};
 
 	useEffect(() => {
