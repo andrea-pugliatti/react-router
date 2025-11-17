@@ -22,43 +22,72 @@ export default function ProductPage() {
 			.finally(() => setIsLoading(false));
 	};
 
-	// useEffect(() => {
-	// 	fetchProduct();
-	// }, []);
-
 	useEffect(() => {
 		fetchProduct();
 	}, [id]);
 
 	return (
-		<div className="container">
-			{isLoading ? (
-				<Quantum size="150" speed="1.00" color="black" />
-			) : (
-				<div>
-					<img src={product.image} alt={product.title} />
-					<div>
-						<button
-							type="button"
-							onClick={() => navigate(`/products/${Number(id) - 1}`)}
-						>
-							{"<-"}
-						</button>
-						<button
-							type="button"
-							onClick={() => navigate(`/products/${Number(id) + 1}`)}
-						>
-							{"->"}
-						</button>
+		<main>
+			<div className="container">
+				{isLoading ? (
+					<div className="loader">
+						<Quantum size="150" speed="0.6" color="black" />
 					</div>
-					<div>{product.title}</div>
-					<div>{product.category}</div>
-					<div>{product.description}</div>
-					<div>{product.price}</div>
-					{/* <div>{product.rating.count}</div>
+				) : (
+					<div className="product-detail">
+						<img src={product.image} alt={product.title} />
+						<div className="product-buttons">
+							<button
+								type="button"
+								onClick={() => navigate(`/products/${Number(id) - 1}`)}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="64"
+									height="64"
+									fill="currentColor"
+									className="bi bi-arrow-left"
+									viewBox="0 0 16 16"
+								>
+									<title>Left</title>
+									<path
+										fillRule="evenodd"
+										d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+									/>
+								</svg>
+							</button>
+							<button type="button" onClick={() => navigate(`/products/`)}>
+								Torna alla lista di prodotti
+							</button>
+							<button
+								type="button"
+								onClick={() => navigate(`/products/${Number(id) + 1}`)}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="64"
+									height="64"
+									fill="currentColor"
+									className="bi bi-arrow-right"
+									viewBox="0 0 16 16"
+								>
+									<title>Right</title>
+									<path
+										fillRule="evenodd"
+										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+									/>
+								</svg>{" "}
+							</button>
+						</div>
+						<div className="product-title">{product.title}</div>
+						<div className="product-category">{product.category}</div>
+						<div className="product-price">{product.price}€</div>
+						<div className="product-description">{product.description}</div>
+						{/* <div>{product.rating.count}</div>
 			    <div>{product.rating.rate}</div> */}
-				</div>
-			)}
-		</div>
+					</div>
+				)}
+			</div>
+		</main>
 	);
 }
