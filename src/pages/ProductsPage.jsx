@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import "ldrs/react/Quantum.css";
-import { Quantum } from "ldrs/react";
+import Loader from "../components/Loader";
 
 export default function ProductsPage() {
 	const productsEndpoint = "https://fakestoreapi.com/products";
@@ -38,9 +37,7 @@ export default function ProductsPage() {
 			<div className="container">
 				<div className="row">
 					{isLoading ? (
-						<div className="loader">
-							<Quantum size="150" speed="0.6" color="black" />
-						</div>
+						<Loader />
 					) : (
 						products.map((item) => (
 							<div key={item.id} className="col">
