@@ -1,5 +1,6 @@
+/** biome-ignore-all lint/correctness/useExhaustiveDependencies: <Bug> */
 import { useEffect, useState } from "react";
-import { useNavigate, useParams, ScrollRestoration } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 
 export default function ProductPage() {

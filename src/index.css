@@ -1,9 +1,11 @@
+/* Reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+/* Generics */
 body {
 	font-family: system-ui, Helvetica, Arial, sans-serif;
 }
@@ -17,19 +19,7 @@ a {
 	color: black;
 }
 
-footer {
-	height: 100vh;
-	background: linear-gradient(rgb(208, 208, 208), rgb(0, 0, 0) 80%);
-	display: flex;
-
-	div {
-		display: block;
-		color: white;
-		align-self: flex-end;
-		padding: 1rem;
-	}
-}
-
+/* Utilities */
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -47,6 +37,7 @@ footer {
 	justify-content: space-between;
 }
 
+/* Not Found Page */
 .not-found {
 	text-align: center;
 	padding: 2rem;
@@ -57,7 +48,7 @@ footer {
 		text-decoration: underline;
 	}
 }
-
+/* Navbar */
 .navbar ul {
 	list-style: none;
 	display: flex;
@@ -79,6 +70,11 @@ footer {
 	}
 }
 
+.navbar a.active {
+	font-weight: 600;
+}
+
+/* Jumbotron */
 .jumbotron {
 	text-align: center;
 	background-color: aquamarine;
@@ -91,6 +87,7 @@ footer {
 	}
 }
 
+/* About Page */
 .about-page {
 	text-align: center;
 	background-color: aqua;
@@ -104,10 +101,7 @@ footer {
 	}
 }
 
-.navbar a.active {
-	font-weight: 600;
-}
-
+/* Products Page */
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -124,6 +118,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
 	&:hover {
 		cursor: pointer;
 	}
@@ -156,11 +151,13 @@ footer {
 	}
 }
 
+/* Loader */
 .loader {
 	display: flex;
 	justify-content: center;
 }
 
+/* Product Detail Page */
 .product-detail {
 	display: flex;
 	flex-direction: column;
@@ -224,14 +221,24 @@ footer {
 		margin: 1rem;
 	}
 	.product-rating {
+		font-size: 1.2rem;
+		margin: 0 auto;
 		&::before {
 			content: "★ ";
 		}
-		font-size: 1.2rem;
-		margin: 0 auto;
 	}
-	.product-rating-count {
-	}
-	.product-rating-rate {
+}
+
+/* Footer */
+footer {
+	height: 100vh;
+	background: linear-gradient(rgb(208, 208, 208), rgb(0, 0, 0) 80%);
+	display: flex;
+
+	div {
+		display: block;
+		color: white;
+		align-self: flex-end;
+		padding: 1rem;
 	}
 }
